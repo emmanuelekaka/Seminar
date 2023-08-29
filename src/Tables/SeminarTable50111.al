@@ -1,3 +1,8 @@
+/* ====Seminar Table by EKK - @emmaSoft ====
+
+
+
+*/
 table 50111 "Seminar"
 {
     DataClassification = CustomerContent;
@@ -6,74 +11,80 @@ table 50111 "Seminar"
 
     fields
     {
+        #Region one
         field(1; "No."; Code[20])
         {
-            DataClassification = CustomerContent;
             Caption = 'No.';
 
         }
-        field(2; "Seminar Duration"; Decimal)
+        field(2; "Name"; Text[50])
         {
-            DataClassification = CustomerContent;
+            Caption = 'Name';
+
+        }
+        #endRegion
+        field(3; "Seminar Duration"; Decimal)
+        {
             Caption = 'Seminar Duration';
             DecimalPlaces = 0 : 1;
 
         }
-        field(3; "Minimum Participants"; Integer)
+        field(4; "Minimum Participants"; Integer)
         {
-            DataClassification = CustomerContent;
             Caption = 'Minimum Participants';
 
         }
-        field(4; "Maximum Participants"; Integer)
+        field(5; "Maximum Participants"; Integer)
         {
-            DataClassification = CustomerContent;
             Caption = 'Maximum Participants';
 
         }
-        field(5; "Search Name"; Code[50])
+        field(6; "Search Name"; Code[50])
         {
-            DataClassification = CustomerContent;
             Caption = 'Search Name';
 
         }
-        field(6; "Blocked"; Boolean)
+        field(7; "Blocked"; Boolean)
         {
-            DataClassification = CustomerContent;
             Caption = 'Blocked';
 
+
         }
-        field(7; "Comment"; Boolean)
+        field(8; "Last Date Modified"; Date)
         {
-            DataClassification = CustomerContent;
+            Caption = 'Last Date Modified';
+            Editable = false;
+
+
+        }
+        field(9; "Comment"; Boolean)
+        {
+            // FieldClass = FlowField;
+            // CalcFormula  = exist("Comment Line" where);
             Caption = 'Comment';
             Editable = false;
 
         }
-        field(8; "Seminar Price"; Decimal)
+        field(10; "Seminar Price"; Decimal)
         {
-            DataClassification = CustomerContent;
             Caption = 'Seminar Price';
             AutoFormatType = 1;
 
         }
-        field(9; "Gen. Prod. Posting Group"; Code[10])
+        field(11; "Gen. Prod. Posting Group"; Code[10])
         {
-            DataClassification = CustomerContent;
             Caption = 'Gen. Prod. Posting Group';
             TableRelation = "Gen. Product Posting Group";
 
         }
-        field(10; "VAT. Prod. Posting Group"; Code[10])
+        field(12; "VAT. Prod. Posting Group"; Code[10])
         {
-            DataClassification = CustomerContent;
             Caption = 'VAT. Prod. Posting Group';
             TableRelation = "VAT Product Posting Group";
 
         }
-        field(11; "No. Series"; Code[20])
+        field(13; "No. Series"; Code[20])
         {
-            DataClassification = CustomerContent;
             Caption = 'No. Series';
             TableRelation = "No. Series";
 
