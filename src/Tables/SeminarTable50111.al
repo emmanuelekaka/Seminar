@@ -68,8 +68,8 @@ table 50111 "Seminar"
         }
         field(9; "Comment"; Boolean)
         {
-            FieldClass = FlowField;
-            CalcFormula = exist("Comment Line" where("Table Name" = const(Seminar)));
+            // FieldClass = FlowField;
+            // CalcFormula = exist("Comment Line" where("Table Name" = const(Seminar)));
             Caption = 'Comment';
             Editable = false;
 
@@ -116,7 +116,6 @@ table 50111 "Seminar"
     }
 
     var
-        myInt: Integer;
 
     trigger OnInsert()
     begin

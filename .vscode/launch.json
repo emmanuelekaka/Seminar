@@ -9,7 +9,7 @@
             "server": "http://localhost:7000/BC210",
             "serverInstance": "BC210",
             "authentication": "UserPassword",
-            "startupObjectId": 22,
+            "startupObjectId": 50107,
             "startupObjectType": "Page",
             "breakOnError": "All",
             "launchBrowser": true,
