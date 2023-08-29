@@ -15,11 +15,20 @@ table 50111 "Seminar"
         field(1; "No."; Code[20])
         {
             Caption = 'No.';
+            trigger OnValidate()
+            begin
+
+            end;
 
         }
         field(2; "Name"; Text[50])
         {
             Caption = 'Name';
+            trigger OnValidate()
+            begin
+                "Search Name" := "Name";
+            end;
+
 
         }
         #endRegion
@@ -59,8 +68,8 @@ table 50111 "Seminar"
         }
         field(9; "Comment"; Boolean)
         {
-            // FieldClass = FlowField;
-            // CalcFormula  = exist("Comment Line" where);
+            FieldClass = FlowField;
+            CalcFormula = exist("Comment Line" where("Table Name" = const(Seminar)));
             Caption = 'Comment';
             Editable = false;
 
@@ -75,6 +84,10 @@ table 50111 "Seminar"
         {
             Caption = 'Gen. Prod. Posting Group';
             TableRelation = "Gen. Product Posting Group";
+            trigger OnValidate()
+            begin
+
+            end;
 
         }
         field(12; "VAT. Prod. Posting Group"; Code[10])
@@ -97,6 +110,9 @@ table 50111 "Seminar"
         {
             Clustered = true;
         }
+        key(key1; "Search Name")
+        {
+        }
     }
 
     var
@@ -104,11 +120,14 @@ table 50111 "Seminar"
 
     trigger OnInsert()
     begin
+        // if "No." = '' then
+        //     "No." := "";
 
     end;
 
     trigger OnModify()
     begin
+        "Last Date Modified" := TODAY;
 
     end;
 
@@ -119,7 +138,11 @@ table 50111 "Seminar"
 
     trigger OnRename()
     begin
-
+        "Last Date Modified" := TODAY;
     end;
 
 }
+
+
+
+

@@ -46,7 +46,6 @@ table 50110 "Seminar Setup"
 
     trigger OnInsert()
     begin
-
     end;
 
     trigger OnModify()
